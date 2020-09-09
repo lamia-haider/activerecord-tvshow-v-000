@@ -16,4 +16,8 @@ class Show < ActiveRecord::Base
     Show.where('rating = ?', self.lowest_rating).first #there could be multiple shows with the same highest rating
   end
 
+  def ratings_sum
+    Show.sum("rating")
+  end
+
 end
